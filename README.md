@@ -12,10 +12,12 @@ and then we are ready to execute commands on mongo shell
 
 ## Access to Mongo with Access Control
 
-usign any mongo command followed by this parameters
+using any mongo command followed by this parameters
 
 Example:
+```
 (mongo|mongorestore|mongoimport) --host {host} -d {database name} -u "{user}" -p "{password}" --authenticationDatabase "admin" --dir={database dump path}
+```
 
 ## References:
 
