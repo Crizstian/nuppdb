@@ -42,9 +42,7 @@ RUN echo "nupp:${PASS}" | chpasswd \
 	&& touch $HOME/.mongorc.js \
 	&& chown -R nupp:nupp /data/* $HOME/* \
 	&& rm -rf /tmp/* /var/tmp/* \
-	&& rm -rf /usr/share/doc \
-	&& apt-get clean \
-	&& apt-get autoclean
+	&& rm -rf /usr/share/doc 
 
 WORKDIR $HOME/nupp-database
 
