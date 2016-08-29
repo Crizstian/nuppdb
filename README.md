@@ -1,4 +1,4 @@
-![](../NuppLogo.png)
+![](NuppLogo.png)
 
 # Nupp Database
 
