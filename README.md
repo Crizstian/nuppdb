@@ -1,4 +1,4 @@
-![](NuppLogo.png)
+![](https://github.com/Nupp/nuppdb/raw/master/NuppLogo.png)
 
 # Nupp Database
 
