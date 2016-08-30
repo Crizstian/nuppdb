@@ -42,11 +42,11 @@ RUN echo "nupp:${PASS}" | chpasswd \
 	&& touch $HOME/.mongorc.js \
 	&& chown -R nupp:nupp /data/* $HOME/* \
 	&& rm -rf /tmp/* /var/tmp/* \
-	&& rm -rf /usr/share/doc 
+	&& rm -rf /usr/share/doc
 
 WORKDIR $HOME/nupp-database
 
-EXPOSE 27017
+EXPOSE 27017 27018 27019
 
 ENTRYPOINT ["/usr/bin/mongod"]
 
