@@ -4,7 +4,7 @@ MAINTAINER <Cristian Ramirez Rosas, cristiano.rosetti@gmail.com>
 
 # Enviroment variables
 ENV MONGO_MAJOR 3.2
-ENV MONGO_VERSION 3.2.9
+ENV MONGO_VERSION 3.2.10
 ENV HOME=/home/nupp
 ENV PASS=nupp
 

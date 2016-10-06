@@ -10,6 +10,33 @@ for every movement in the database we have to authenticate at the mongod server
 
 and then we are ready to execute commands on mongo shell
 
+## Create the mongo database with replica set
+Start one container to configure the volume
+```
+docker run --name some-db -v some-volume-for-persistence:/data -d crizstian/nuppdb --smallfiles --dbpath /data/rs
+```
+Create some admin users as mongo docs recommends
+```
+docker exec some-db bash -c 'mongo < /tmp/create-user-admin.js'
+```
+Copy the keyfile to the mongodb
+
+```
+docker exec some-db bash -c 'echo "$PASS" | sudo -S chown -R nupp:nupp /data/keyfile/mongodb-keyfile
+```
+remove container to restart new one with the replica-set config
+
+`docker rm -f some-db`
+
+create container with sercurity and replica configuration
+
+```
+docker run --name some-db --hostname some-db {--add-host some-servers} -v some-volume-for-persistence:/data 
+           --env-file env-file -p outer-port-binding
+           -d crizstian/nuppdb --smallfiles --keyFile /data/keyfile/mongodb-keyfile
+           --replSet rs1 --storageEngine wiredTiger --dbpath /data/rs --port inner-port
+```
+
 ## Access to Mongo with Access Control
 
 using any mongo command followed by this parameters
